@@ -12,7 +12,7 @@ class Hanoi
         if end_arr.empty?
             end_arr << start_arr.shift
         elsif end_arr[0] > start_arr[0]
-            end_arr << start_arr.shift
+            end_arr.unshift(start_arr.shift)
         elsif
             raise "invalid move"
         end
@@ -24,6 +24,7 @@ class Hanoi
 
     def play
         until won?
+            puts "Enter: 1, 2, or 3 for start stack and end stack"
             input = gets.chomp
             i, j = input.split(" ")
             if i == "1" 
