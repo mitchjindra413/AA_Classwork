@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Cat's Details:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Birth Date:</td>
+            <td><%= @cat.birth_date %></td>
+        </tr>
+        <tr>
+            <td>Color:</td>
+            <td><%= @cat.color %></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><%= @cat.name %></td>
+        </tr>
+        <tr>
+            <td>Sex:</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><%= @cat.description %></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="<%= edit_cat_url(@cat.id) %>">Edit Cat</a>

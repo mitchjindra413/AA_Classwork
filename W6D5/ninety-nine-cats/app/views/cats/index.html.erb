@@ -1,0 +1,8 @@
+<h1>All Cats</h1>
+
+<% @cats.each do |cat| %>
+<%= render 'cat',  cat: cat, action: 'index' %>
+<% end %>
+<br>
+<br>
+<a href="<%= new_cat_url %>">New Cat Form</a>
