@@ -1,0 +1,25 @@
+<h3>Band Name:</h2>
+<p><%= band.name %></p>
+
+
+<% if action == "index" %>
+    <a href="<%= band_url(band) %>">Band Page</a> 
+
+<% elsif action == "show" %>
+    <h3>Albums:</h3>
+    <% band.albums.each do |album|%>
+        <a href=" <%= album_url(album.id) %>"><%= album.title %></a>
+        <br>
+    <% end %>
+    <br>
+
+    <a href="<%= edit_band_url(band) %>">Edit Band</a>
+    <br>
+
+    <a href="<%= new_band_album_url(band) %>">New Album</a>
+    <form action="<%= band_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Delete Band">
+      </form>
+<% end %>

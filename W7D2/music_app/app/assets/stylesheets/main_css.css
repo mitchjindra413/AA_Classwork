@@ -1,0 +1,27 @@
+header {
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-style: italic;
+    color: white;
+}
+
+header form {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 30px;
+    background-color: lightgray;
+}
+

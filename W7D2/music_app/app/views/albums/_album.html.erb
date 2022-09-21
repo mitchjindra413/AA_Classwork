@@ -1,0 +1,13 @@
+<h2>Album Name:</h2>
+<p><%= album.title %></p>
+
+<% if action == "index" %>
+    <a href="<%= album_url(album) %>">Album Page</a> 
+<% elsif action == "show" %>
+    <a href="<%= edit_album_url(album) %>">Edit Album</a>
+    <form action="<%= band_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Delete Album">
+      </form>
+<% end %>

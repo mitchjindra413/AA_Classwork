@@ -1,0 +1,39 @@
+<% if action == "new" %>
+    <% action_url = albums_url %>
+    <% title = "New Album" %>
+<% elsif action == "edit" %>
+    <% action_url = album_url(@album)%>
+    <% title = "Edit Album" %>
+<% end %>
+
+<h1><%= title %>:</h1>
+<form action="<%= action_url %>" method="post">
+    <% if action == "edit"%>
+        <input type="hidden" name="_method" value="patch">
+    <%end%>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+    <label>Title:
+    <input type="text" name="album[title]" id="album_title" value="<%= @album.title %>">
+    </label>
+    <br>
+    <br>
+    <label>Year:
+    <input type="text" name="album[year]" id="album_year" value="<%= @album.year %>">
+    </label>
+    <br>
+    <br>
+    <label >Studio:
+    <label for="">True:
+    <input type="radio" name="album[studio]" value="true">
+    </label>
+    <label for="">False:
+    <input type="radio" name="album[studio]" value="false" >
+    </label>
+    </label>
+    <br>
+    <br>
+    <% if action == "new" %>
+    <input type="hidden" name="album[band_id]" value="<%= band_id %>">
+    <% end %>
+    <input type="submit" value="Submit">
+</form>
